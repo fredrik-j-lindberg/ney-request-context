@@ -2,7 +2,13 @@
   "name": "ney-request-context",
   "version": "1.0.0",
   "description": "A package (built for express apps) that saves useful request context and makes it globally available",
+  "homepage": "https://github.com/Neylion/ney-request-context",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Neylion/ney-request-context"
+  },
   "main": "index.js",
+  "files": ["lib/**/*"],
   "scripts": {
     "test": "mocha -r ts-node/register test/**/*Test.ts && echo 'Running linter...' && npm run lint && echo 'Done.'",
     "build": "tsc",
