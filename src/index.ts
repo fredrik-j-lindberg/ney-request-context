@@ -13,7 +13,7 @@ interface Settings {
 let skipLoggingForPaths: string[] | undefined;
 let log: CallableFunction | undefined;
 export const requestContext = new RequestContext(namespace);
-export function getRequestContextMiddleware(settings?: Settings, logCallback?: CallableFunction) {
+export function getRequestContextMiddleware(settings?: Settings) {
   skipLoggingForPaths = settings?.skipLoggingForPaths;
   log = settings?.logCallback;
   return function requestContextMiddleware(req: any, res: any, next: any) {
@@ -30,7 +30,7 @@ function setRequestContext(req: any, res: any, next: any) {
   requestContext.correlationId = rc.correlationId || getOrCreateCorrelationId(req.headers, skipLogging);
   requestContext.callingClient = rc.callingClient;
   requestContext.method = rc.method || req.method;
-  requestContext.path = rc.path || req.url
+  requestContext.path = rc.path || req.url;
   requestContext.additionalData = rc.additionalData;
   next();
 }
