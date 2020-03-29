@@ -1,5 +1,5 @@
 {
-  "name": "ney-request-context",
+  "name": "@neylion/request-context",
   "version": "1.0.0",
   "description": "A package (built for express apps) that saves useful request context and makes it globally available",
   "homepage": "https://github.com/Neylion/ney-request-context",
