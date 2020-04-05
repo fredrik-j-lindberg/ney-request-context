@@ -7,7 +7,7 @@ const namespace = createNamespace("requestContext");
 
 interface Settings {
   skipLoggingForPaths?: string[];
-  logCallback?: CallableFunction;
+  logDelegate?: CallableFunction;
 }
 
 let skipLoggingForPaths: string[] | undefined;
@@ -15,7 +15,7 @@ let log: CallableFunction | undefined;
 export const requestContext = new RequestContext(namespace);
 export function getRequestContextMiddleware(settings?: Settings) {
   skipLoggingForPaths = settings?.skipLoggingForPaths;
-  log = settings?.logCallback;
+  log = settings?.logDelegate;
   return function requestContextMiddleware(req: any, res: any, next: any) {
     namespace.run(() => setRequestContext(req, res, next));
   };
