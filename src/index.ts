@@ -36,7 +36,6 @@ function setRequestContext(req: any, res: any, next: any) {
 }
 
 function shouldRequestNotBeLogged(path: string, headers: { [x: string]: any }) {
-  if (headers["x-skip-logging"]) return true;
   if (skipLoggingForPaths?.includes(path)) return true;
   return false;
 }

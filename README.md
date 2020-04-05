@@ -19,7 +19,7 @@ The middleware sets up the following context properties (accessible through the 
 Property | Use-case | Value 
 -------- | -------- | ----------
 **startTime** | Figure out response times and the likes. | Is set to "new Date()".
-**skipLogging** | Quickly find out if logs/metrics etc is relevant for the request. | Is by default set to "false" but if you have provided the setting ``settings.skipLoggingForPaths`` and the request path matches any of the values specified it is set to false. It also listens for the header ``x-skip-logging`` (true/false) and prioritizes that value.
+**skipLogging** | Quickly find out if logs/metrics etc is relevant for the request. | Is by default set to "false" but if you have provided the setting ``settings.skipLoggingForPaths`` and the request path matches any of the values specified it is set to false.
 **correlationId** | Easily find out what logs are related to eachother (it is greatly recommended that you pass this between services to easily be able to troubleshoot a specific request). | Is generated using the "uuid" package (v4). It does however listen to the header ``x-correlation-id`` and prioritizes that value. If you have provided a log delegate (``settings.logDelegate``) it will be used to log whether a correlation id was created or if it was taken from the incoming request header.
 **callingClient** | Logging (Helpful when trying to determine who is calling the service when troubleshooting a specific request) | Is not set by default. If you want to use it you are required set it after the requestContextMiddleware or to pass it to the middleware with the res.locals override (``res.locals.requestContext.callingClient``).
 **method** | Logging/Metrics | Is set based on ``req.method`` by default.
