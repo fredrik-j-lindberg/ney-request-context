@@ -1,6 +1,6 @@
 {
   "name": "@neylion/request-context",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A package (built for express api apps) that saves useful request context and makes it easily accessible",
   "homepage": "https://github.com/Neylion/ney-request-context",
   "repository": {
