@@ -1,5 +1,5 @@
 # ney-request-context
-A nodejs package (built for express api services) that saves useful request context which can be accessed throughout the application without being having to pass around res.locals.
+A nodejs package (built for express api services) that saves useful request context which can be accessed throughout the application without having to pass around res.locals.
 
 *It is based on the [cls-hooked](https://www.npmjs.com/package/cls-hooked) npm package.*
 
